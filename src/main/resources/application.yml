@@ -2,7 +2,21 @@ spring:
   batch:
     job:
       names: ${job.name:NONE}
-    initialize-schema:
+    initialize-schema: # 시작시 DDL 실행 여부
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    data: classpath:person.sql
+
   datasource:
-    driver-class-name: org.h2.Driver
-    data: classpath:person.sql
+    hikari:
+      #jdbc-url: jdbc:mysql://127.0.0.1:3306/spring_batch?characterEncoding=UTF-8&serverTimezone=UTC&rewriteBatchedStatements=true
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/spring_batch
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: "!adm123@"
+  jpa:
+    hibernate:
+      ddl-auto: update
+    #show-sql: true
+batch:
+  initialize-schema: never

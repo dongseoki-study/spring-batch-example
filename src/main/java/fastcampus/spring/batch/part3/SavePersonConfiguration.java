@@ -65,6 +65,8 @@ public class SavePersonConfiguration {
                 .faultTolerant()
                 .skip(NotFoundNameException.class)
                 .skipLimit(2)
+//                .retry(NotFoundNameException.class) // 네트워크 등 문제로 그냥 재시도 할 경우
+//                .retryLimit(3)
                 .build();
     }
 
