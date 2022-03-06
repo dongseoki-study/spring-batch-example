@@ -10,7 +10,8 @@ spring:
   datasource:
     hikari:
       #jdbc-url: jdbc:mysql://127.0.0.1:3306/spring_batch?characterEncoding=UTF-8&serverTimezone=UTC&rewriteBatchedStatements=true
-      jdbc-url: jdbc:mysql://127.0.0.1:3306/spring_batch
+      #jdbc-url: jdbc:mysql://127.0.0.1:3306/spring_batch
+      jdbc-url: jdbc:mysql://host.docker.internal:3306/spring_batch
       driver-class-name: com.mysql.cj.jdbc.Driver
       username: root
       password: "!adm123@"
